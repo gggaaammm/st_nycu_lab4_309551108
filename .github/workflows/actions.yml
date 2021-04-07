@@ -60,7 +60,7 @@ jobs:
       - name: Checkout
       - uses: actions/checkout@v2
 
-      - name : Generate Changelog
+      - name: Generate Changelog
         run: echo "# good thing appear" > ${{ github.workflow }}-CHANGELOG.txt
 
       - name: Run a Release Script
