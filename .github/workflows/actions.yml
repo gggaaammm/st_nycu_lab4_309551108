@@ -41,6 +41,10 @@ jobs:
           distribution: 'adopt'
       - name: Run a Test Script
         run: ./gradlew test
+      - uses: actions/upload-artifact@v2
+        with:
+          name: my upload artifact
+          path: ~/build/reports
 
   Assemble:
     needs: [Test]
