@@ -5,7 +5,9 @@ on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        max-parallel: 1
     steps:
       - uses: actions/checkout@v2
       - name: Set up JDK 11
@@ -28,9 +30,8 @@ jobs:
   Test:
     runs-on: ubuntu-latest
     steps:
-      - name: Run a Script
-        run: snap install gradle --classic
-             gradle test
+      - name: Run a Test Script
+        run: gradle test
 
   Assemble:
     runs-on: ubuntu-latest
