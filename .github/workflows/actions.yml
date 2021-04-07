@@ -20,4 +20,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a Script
-        run: echo "Hi"
+        run: echo "Compile"
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a Script
+        run: echo "Test"
+  Assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a Script
+        run: echo "Assemble"
