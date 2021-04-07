@@ -61,6 +61,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: download
+        uses: actions/download-artifact@v2
+        with:
+          name: buildJar
+
+      - name: Display structure of downloaded files
+        run: ls -R
+
 
       - name: Run a Release Script
         uses: softprops/action-gh-release@v1
