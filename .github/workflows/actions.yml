@@ -60,16 +60,12 @@ jobs:
       - name: Checkout
       - uses: actions/checkout@v2
 
-      - name: Generate Changelog
-        run: echo "good thing appear" > ${{ github.workflow }}-CHANGELOG.txt
 
       - name: Run a Release Script
       - uses: softprops/action-gh-release@v1
-        if: startWith(github.ref, 'refs/tafs/v')
+        if: startWith(github.ref, 'refs/tafs/')
         with:
-          body_path: ${{ github.workflow }}-CHANGELOG.txt
           files: |
             /home/runner/work/st_nycu_lab4_309551108/st_nycu_lab4_309551108/build/libs/*.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_REPOSITORY: my_gh_org/my_gh_repo
