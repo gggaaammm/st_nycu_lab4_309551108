@@ -58,11 +58,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      uses: actions/checkout@v2
+      - uses: actions/checkout@v2
+
       - name : Generate Changelog
       run: echo "# good thing appear" > ${{ github.workflow }}-CHANGELOG.txt
+
       - name: Run a Release Script
-        uses: softprops/action-gh-release@v1
+      - uses: softprops/action-gh-release@v1
         if: startWith(github.ref, 'refs/tafs/v')
         with:
           body_path: ${{ github.workflow }}-CHANGELOG.txt
