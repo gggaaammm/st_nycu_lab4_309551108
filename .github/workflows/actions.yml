@@ -61,7 +61,7 @@ jobs:
 
       - name: Run a Release Script
         uses: softprops/action-gh-release@v1
-        if: startWith(github.ref, 'refs/tafs/')
+        if: startsWith(github.ref, 'refs/tafs/')
         with:
           files: |
             /home/runner/work/st_nycu_lab4_309551108/st_nycu_lab4_309551108/build/libs/*.jar
