@@ -21,6 +21,7 @@ jobs:
     steps:
       - name: Run a Script
         run: echo "Compile"
+             ls -a
   Test:
     runs-on: ubuntu-latest
     steps:
