@@ -16,11 +16,9 @@ jobs:
         run: ./gradlew build
 
   Compile:
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - name: Upload a Build Artifact
-        uses: actions/upload-artifact@v2
-
       - name: Run a Script
         run: echo "Compile"
              ls -a
@@ -32,6 +30,7 @@ jobs:
         run: gradle test
 
   Assemble:
+    needs: [Test]
     runs-on: ubuntu-latest
     steps:
       - name: Run a Script
