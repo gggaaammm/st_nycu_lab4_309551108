@@ -61,4 +61,4 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Run a Release Script
-        run: echo "Release"
+        run: echo "Release?"
