@@ -56,11 +56,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
 
 
       - name: Run a Release Script
-      - uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v1
         if: startWith(github.ref, 'refs/tafs/')
         with:
           files: |
