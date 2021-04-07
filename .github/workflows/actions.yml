@@ -63,7 +63,6 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: buildJar
-          path: ~/download
 
       - name: Display structure of downloaded files
         run: ls -R
@@ -73,6 +72,6 @@ jobs:
         uses: softprops/action-gh-release@v1
         with:
           files: |
-            ~/download/*.jar
+            *.jar
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
