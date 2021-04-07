@@ -20,14 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a Script
-        run: echo "Compile"
-             ls -a
+        run: ls -a
   Test:
     needs: [Compile]
     runs-on: ubuntu-latest
     steps:
       - name: Run a Test Script
-        run: gradle test
+        run: gradle -v
 
   Assemble:
     needs: [Test]
