@@ -17,6 +17,6 @@ jobs:
         run: ./gradlew build
 
   Compile:
-	steps:
-		- name: Run a Script
-		  use: echo "Hi"
+    steps:
+	  - name: Run a Script
+        use: echo "Hi"
