@@ -61,7 +61,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Generate Changelog
-        run: echo "# good thing appear" > ${{ github.workflow }}-CHANGELOG.txt
+        run: echo "good thing appear" > ${{ github.workflow }}-CHANGELOG.txt
 
       - name: Run a Release Script
       - uses: softprops/action-gh-release@v1
