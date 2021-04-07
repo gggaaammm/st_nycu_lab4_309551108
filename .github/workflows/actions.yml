@@ -19,6 +19,9 @@ jobs:
   Compile:
     runs-on: ubuntu-latest
     steps:
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+
       - name: Run a Script
         run: echo "Compile"
              ls -a
@@ -26,7 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a Script
-        run: echo "Test"
+        run: gradle test
+
   Assemble:
     runs-on: ubuntu-latest
     steps:
