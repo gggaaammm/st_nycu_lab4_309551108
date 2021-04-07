@@ -29,7 +29,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run a Script
-        run: gradle test
+        run: snap install gradle --classic
+             gradle test
 
   Assemble:
     runs-on: ubuntu-latest
