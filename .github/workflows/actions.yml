@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Build with Gradle
-        run: ./gradlew compileJava compileTestJava
+        run: ./gradlew clean compileJava compileTestJava -i
 
 
   Test:
@@ -34,11 +34,11 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Run a Test Script
-        run: ./gradlew test
+        run: ./gradlew clean test -i
       - uses: actions/upload-artifact@v2
         with:
-          name: my upload artifact
-          path: ./build/reports
+          name: upload testreports
+          path: ./build/reports/test/test
 
   Assemble:
     needs: [Test]
@@ -51,4 +51,8 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
       - name: Run a Assemble Script
-        run: ./gradlew assemble
+        run: ./gradlew clean assemble -i
+      - uses: actions/upload-artifact@v2
+        with:
+          name: upload jar files
+          path: ./build/libs/*.jar
